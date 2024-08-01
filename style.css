@@ -1,0 +1,247 @@
+* {
+    font-family: sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+    color: white;
+    
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    background-color: rgb(17, 17, 17);
+    padding: 5px;
+    width: 500px;
+    position: relative;
+}
+
+.cell {
+    height: 150px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: antiquewhite;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.line {
+    position: absolute;
+    background-color: white;
+}
+
+.horizontal {
+    width: 80%;
+    height: 2px;
+}
+
+.vertical {
+    width: 3px;
+    height: calc(100% - 120px);
+}
+
+#line1 {
+    top: 162px;
+    left: 50px;
+}
+
+#line2 {
+    top: 335px;
+    left: 50px;
+}
+
+#line3 {
+    top: 60px;
+    left: 163px;
+}
+
+#line4 {
+    top: 60px;
+    left: 335px;
+}
+
+.side-menu {
+    margin-left: 20px;
+    padding: 15px;
+    width: 20%;
+    text-align: center;
+    background-color: rgb(63, 7, 60);
+    box-shadow: 1px 1px 5px 3px rgb(228, 127, 203);
+    border-radius: 10px;
+}
+
+.side-menu h2 {
+    font-size: 30px;
+    background-color: rgb(63, 7, 60);
+}
+
+#currentPlayer {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    background-color: rgb(63, 7, 60);
+}
+
+
+#winnerDisplay {
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: bolder;
+    color: #333;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-in, transform 1s ease-in;
+}
+
+#winnerDisplay.show {
+    opacity: 1;
+    transform: translateY(0);
+    background-color: rgb(63, 7, 60);
+}
+
+
+#playAgain,
+#playWithPC {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: bisque;
+    color: black;
+    border: solid 2px black;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#playAgain:hover {
+    font-weight: bolder;
+}
+
+#playWithPC:hover {
+    font-weight: bolder;
+}
+
+#countdownDisplay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; 
+    display: none; /* Initially hidden */
+}
+
+#countdown {
+    font-size: 100px;
+    background-color: rgba(0, 0, 0, 0.005); 
+    color: rgb(255, 255, 255); 
+    font-weight: bold;
+}
+
+#soundControl {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#soundControl img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgb(63, 7, 60);
+}
+
+@media screen and (max-width:600px)
+{
+    .game-container{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        max-height: 700px;
+        max-width: 500px;
+        margin-top: 80px;
+    }
+    .side-menu{
+        width: 300px;
+        max-height: 850px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        background-color: rgb(17, 17, 17);
+        padding: 5px;
+        width: 360px;
+        height: 360px;
+        position: relative;
+    }
+    
+    .cell {
+        height: 110px;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 80px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    #line1 {
+        top: 119px;
+        left: 50px;
+    }
+    
+    #line2 {
+        top: 239px;
+        left: 50px;
+    }
+    
+    #line3 {
+        top: 60px;
+        left: 119px;
+    }
+    
+    #line4 {
+        top: 60px;
+        left: 238px;
+    }
+}
+
